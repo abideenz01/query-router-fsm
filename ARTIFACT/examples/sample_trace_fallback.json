@@ -1,0 +1,121 @@
+{
+  "request_id": "18ee865bf1a0",
+  "role": "support",
+  "status": "ANSWERED",
+  "plan": {
+    "decision": "route",
+    "reason": "intent=directory conf=1.00",
+    "scores": {
+      "metrics": 0,
+      "policy": 0,
+      "directory": 5
+    }
+  },
+  "subtasks": [
+    {
+      "status": "ANSWERED",
+      "reason": "sufficient evidence",
+      "route_path": [
+        "directory",
+        "policy"
+      ],
+      "args": {
+        "query": "Who owns the legacy fax gateway?"
+      },
+      "confidence": 1.0,
+      "notes": [
+        "entity not in alias list, passed through as free text"
+      ],
+      "tool_calls": [
+        {
+          "tool": "directory_lookup",
+          "args_sha": "b7975a9aad0b",
+          "attempt": 1,
+          "ok": true
+        },
+        {
+          "tool": "policy_search",
+          "args_sha": "2feb3ca9eb5b",
+          "attempt": 1,
+          "ok": true
+        }
+      ],
+      "transitions": [
+        {
+          "from": "RECEIVED",
+          "to": "ROUTING",
+          "reason": "received",
+          "t_ms": 0.89
+        },
+        {
+          "from": "ROUTING",
+          "to": "VALIDATING",
+          "reason": "route=directory",
+          "t_ms": 0.92
+        },
+        {
+          "from": "VALIDATING",
+          "to": "AUTHORIZING",
+          "reason": "arguments valid",
+          "t_ms": 0.94
+        },
+        {
+          "from": "AUTHORIZING",
+          "to": "EXECUTING",
+          "reason": "authorized",
+          "t_ms": 0.95
+        },
+        {
+          "from": "EXECUTING",
+          "to": "CHECKING",
+          "reason": "entity not found in directory",
+          "t_ms": 1.01
+        },
+        {
+          "from": "CHECKING",
+          "to": "FALLBACK",
+          "reason": "directory insufficient, trying policy",
+          "t_ms": 1.02
+        },
+        {
+          "from": "FALLBACK",
+          "to": "VALIDATING",
+          "reason": "route=policy",
+          "t_ms": 1.03
+        },
+        {
+          "from": "VALIDATING",
+          "to": "AUTHORIZING",
+          "reason": "arguments valid",
+          "t_ms": 1.04
+        },
+        {
+          "from": "AUTHORIZING",
+          "to": "EXECUTING",
+          "reason": "authorized",
+          "t_ms": 1.05
+        },
+        {
+          "from": "EXECUTING",
+          "to": "CHECKING",
+          "reason": "top=pol-legacy coverage=0.75",
+          "t_ms": 1.09
+        },
+        {
+          "from": "CHECKING",
+          "to": "ANSWERED",
+          "reason": "sufficient evidence",
+          "t_ms": 1.1
+        }
+      ],
+      "items": [
+        {
+          "doc_id": "pol-legacy",
+          "title": "Legacy system decommission plan",
+          "score": 8.811,
+          "text": "The legacy fax gateway is owned by the Platform Operations team and is scheduled for shutdown in September. The old reporting server is owned by the BI team and will be retired after the lakehouse migration. Questions about legacy systems go to the platform operations channel."
+        }
+      ]
+    }
+  ]
+}

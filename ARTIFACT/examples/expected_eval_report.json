@@ -1,0 +1,453 @@
+{
+  "n_queries": 73,
+  "strategies": {
+    "router": {
+      "outcome_accuracy": 0.918,
+      "answerable_accuracy": 0.911,
+      "non_answerable_accuracy": 0.941,
+      "tool_calls_per_query": 0.9,
+      "answered_when_it_should_not": 1,
+      "usd_per_1k_queries": 0.924,
+      "usd_per_1k_queries_without_llm_routing": 0.468,
+      "synthesis_input_tokens_per_query": 295.4,
+      "latency_ms_p50": 1496.7,
+      "latency_ms_p95": 1726.2,
+      "context_precision_mean": 0.8,
+      "accuracy_by_category": {
+        "clarify": "6/6",
+        "compound": "5/6",
+        "directory": "13/13",
+        "metrics": "18/20",
+        "no_answer": "2/3",
+        "out_of_scope": "4/4",
+        "policy": "15/17",
+        "refused": "4/4"
+      },
+      "confusion": {
+        "CLARIFY -> CLARIFY": 6,
+        "NO_ANSWER -> NO_ANSWER": 2,
+        "NO_ANSWER -> policy": 1,
+        "OUT_OF_SCOPE -> OUT_OF_SCOPE": 4,
+        "REFUSED -> REFUSED": 4,
+        "compound -> compound": 6,
+        "directory -> directory": 11,
+        "metrics -> CLARIFY": 1,
+        "metrics -> metrics": 19,
+        "policy -> NO_ANSWER": 1,
+        "policy -> OUT_OF_SCOPE": 1,
+        "policy -> policy": 17
+      },
+      "misses": [
+        {
+          "id": "m17",
+          "why": "status CLARIFY != ANSWERED"
+        },
+        {
+          "id": "m19",
+          "why": "missing evidence for metrics"
+        },
+        {
+          "id": "p10",
+          "why": "status OUT_OF_SCOPE != ANSWERED"
+        },
+        {
+          "id": "p15",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "c04",
+          "why": "status PARTIAL != ANSWERED"
+        },
+        {
+          "id": "n02",
+          "why": "status ANSWERED != NO_ANSWER"
+        }
+      ]
+    },
+    "vector_only": {
+      "outcome_accuracy": 0.274,
+      "answerable_accuracy": 0.321,
+      "non_answerable_accuracy": 0.118,
+      "tool_calls_per_query": 1.0,
+      "answered_when_it_should_not": 3,
+      "usd_per_1k_queries": 0.252,
+      "usd_per_1k_queries_without_llm_routing": 0.252,
+      "synthesis_input_tokens_per_query": 173.3,
+      "latency_ms_p50": 180.0,
+      "latency_ms_p95": 1148.8,
+      "context_precision_mean": 0.407,
+      "accuracy_by_category": {
+        "clarify": "0/6",
+        "compound": "0/6",
+        "directory": "2/13",
+        "metrics": "0/20",
+        "no_answer": "2/3",
+        "out_of_scope": "0/4",
+        "policy": "16/17",
+        "refused": "0/4"
+      },
+      "confusion": {
+        "CLARIFY -> NO_ANSWER": 4,
+        "CLARIFY -> policy": 2,
+        "NO_ANSWER -> NO_ANSWER": 2,
+        "NO_ANSWER -> policy": 1,
+        "OUT_OF_SCOPE -> NO_ANSWER": 4,
+        "REFUSED -> NO_ANSWER": 4,
+        "compound -> NO_ANSWER": 5,
+        "compound -> policy": 1,
+        "directory -> NO_ANSWER": 9,
+        "directory -> policy": 2,
+        "metrics -> NO_ANSWER": 19,
+        "metrics -> policy": 1,
+        "policy -> NO_ANSWER": 1,
+        "policy -> policy": 18
+      },
+      "misses": [
+        {
+          "id": "m01",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m02",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m03",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m04",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m05",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m06",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m07",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m08",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m09",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m10",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m11",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m12",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m13",
+          "why": "missing evidence for metrics"
+        },
+        {
+          "id": "m14",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m15",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m16",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m17",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m18",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m19",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m20",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "p15",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d01",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d02",
+          "why": "missing evidence for directory"
+        },
+        {
+          "id": "d03",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d04",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d05",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d06",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d09",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d10",
+          "why": "missing evidence for directory"
+        },
+        {
+          "id": "d11",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d12",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "d13",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "c01",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "c02",
+          "why": "missing evidence for directory"
+        },
+        {
+          "id": "c03",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "c04",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "c05",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "c06",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "k01",
+          "why": "status NO_ANSWER != CLARIFY"
+        },
+        {
+          "id": "k02",
+          "why": "status NO_ANSWER != CLARIFY"
+        },
+        {
+          "id": "k03",
+          "why": "status NO_ANSWER != CLARIFY"
+        },
+        {
+          "id": "k04",
+          "why": "status ANSWERED != CLARIFY"
+        },
+        {
+          "id": "k05",
+          "why": "status ANSWERED != CLARIFY"
+        },
+        {
+          "id": "k06",
+          "why": "status NO_ANSWER != CLARIFY"
+        },
+        {
+          "id": "r01",
+          "why": "status NO_ANSWER != REFUSED"
+        },
+        {
+          "id": "r02",
+          "why": "status NO_ANSWER != REFUSED"
+        },
+        {
+          "id": "r03",
+          "why": "status NO_ANSWER != REFUSED"
+        },
+        {
+          "id": "r04",
+          "why": "status NO_ANSWER != REFUSED"
+        },
+        {
+          "id": "n02",
+          "why": "status ANSWERED != NO_ANSWER"
+        },
+        {
+          "id": "o01",
+          "why": "status NO_ANSWER != OUT_OF_SCOPE"
+        },
+        {
+          "id": "o02",
+          "why": "status NO_ANSWER != OUT_OF_SCOPE"
+        },
+        {
+          "id": "o03",
+          "why": "status NO_ANSWER != OUT_OF_SCOPE"
+        },
+        {
+          "id": "o04",
+          "why": "status NO_ANSWER != OUT_OF_SCOPE"
+        }
+      ]
+    },
+    "fan_out": {
+      "outcome_accuracy": 0.699,
+      "answerable_accuracy": 0.875,
+      "non_answerable_accuracy": 0.118,
+      "tool_calls_per_query": 2.3,
+      "answered_when_it_should_not": 4,
+      "usd_per_1k_queries": 0.57,
+      "usd_per_1k_queries_without_llm_routing": 0.57,
+      "synthesis_input_tokens_per_query": 319.7,
+      "latency_ms_p50": 1146.7,
+      "latency_ms_p95": 1360.4,
+      "context_precision_mean": 0.711,
+      "accuracy_by_category": {
+        "clarify": "0/6",
+        "compound": "2/6",
+        "directory": "13/13",
+        "metrics": "18/20",
+        "no_answer": "2/3",
+        "out_of_scope": "0/4",
+        "policy": "16/17",
+        "refused": "0/4"
+      },
+      "confusion": {
+        "CLARIFY -> NO_ANSWER": 3,
+        "CLARIFY -> fan_out": 1,
+        "CLARIFY -> policy": 2,
+        "NO_ANSWER -> NO_ANSWER": 2,
+        "NO_ANSWER -> policy": 1,
+        "OUT_OF_SCOPE -> NO_ANSWER": 4,
+        "REFUSED -> NO_ANSWER": 4,
+        "compound -> directory": 1,
+        "compound -> fan_out": 2,
+        "compound -> metrics": 3,
+        "directory -> directory": 9,
+        "directory -> fan_out": 2,
+        "metrics -> NO_ANSWER": 1,
+        "metrics -> fan_out": 1,
+        "metrics -> metrics": 18,
+        "policy -> NO_ANSWER": 1,
+        "policy -> policy": 18
+      },
+      "misses": [
+        {
+          "id": "m17",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "m19",
+          "why": "missing evidence for metrics"
+        },
+        {
+          "id": "p15",
+          "why": "status NO_ANSWER != ANSWERED"
+        },
+        {
+          "id": "c03",
+          "why": "missing evidence for policy"
+        },
+        {
+          "id": "c04",
+          "why": "missing evidence for directory"
+        },
+        {
+          "id": "c05",
+          "why": "missing evidence for metrics"
+        },
+        {
+          "id": "c06",
+          "why": "missing evidence for policy"
+        },
+        {
+          "id": "k01",
+          "why": "status NO_ANSWER != CLARIFY"
+        },
+        {
+          "id": "k02",
+          "why": "status NO_ANSWER != CLARIFY"
+        },
+        {
+          "id": "k03",
+          "why": "status NO_ANSWER != CLARIFY"
+        },
+        {
+          "id": "k04",
+          "why": "status ANSWERED != CLARIFY"
+        },
+        {
+          "id": "k05",
+          "why": "status ANSWERED != CLARIFY"
+        },
+        {
+          "id": "k06",
+          "why": "status ANSWERED != CLARIFY"
+        },
+        {
+          "id": "r01",
+          "why": "status NO_ANSWER != REFUSED"
+        },
+        {
+          "id": "r02",
+          "why": "status NO_ANSWER != REFUSED"
+        },
+        {
+          "id": "r03",
+          "why": "status NO_ANSWER != REFUSED"
+        },
+        {
+          "id": "r04",
+          "why": "status NO_ANSWER != REFUSED"
+        },
+        {
+          "id": "n02",
+          "why": "status ANSWERED != NO_ANSWER"
+        },
+        {
+          "id": "o01",
+          "why": "status NO_ANSWER != OUT_OF_SCOPE"
+        },
+        {
+          "id": "o02",
+          "why": "status NO_ANSWER != OUT_OF_SCOPE"
+        },
+        {
+          "id": "o03",
+          "why": "status NO_ANSWER != OUT_OF_SCOPE"
+        },
+        {
+          "id": "o04",
+          "why": "status NO_ANSWER != OUT_OF_SCOPE"
+        }
+      ]
+    }
+  }
+}

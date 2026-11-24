@@ -1,0 +1,148 @@
+{
+  "request_id": "bf9fefe08d90",
+  "role": "analyst",
+  "status": "ANSWERED",
+  "plan": {
+    "decision": "route",
+    "reason": "compound query with 2 parts",
+    "scores": {
+      "metrics": 6,
+      "policy": 1,
+      "directory": 8
+    }
+  },
+  "subtasks": [
+    {
+      "status": "ANSWERED",
+      "reason": "sufficient evidence",
+      "route_path": [
+        "metrics"
+      ],
+      "args": {
+        "metric": "refund_rate",
+        "region": "UAE",
+        "period_start": "2026-04",
+        "period_end": "2026-06"
+      },
+      "confidence": 0.857,
+      "notes": [],
+      "tool_calls": [
+        {
+          "tool": "metrics_query",
+          "args_sha": "96f342203116",
+          "attempt": 1,
+          "ok": true
+        }
+      ],
+      "transitions": [
+        {
+          "from": "RECEIVED",
+          "to": "ROUTING",
+          "reason": "received",
+          "t_ms": 1.37
+        },
+        {
+          "from": "ROUTING",
+          "to": "VALIDATING",
+          "reason": "route=metrics",
+          "t_ms": 1.39
+        },
+        {
+          "from": "VALIDATING",
+          "to": "AUTHORIZING",
+          "reason": "arguments valid",
+          "t_ms": 1.47
+        },
+        {
+          "from": "AUTHORIZING",
+          "to": "EXECUTING",
+          "reason": "authorized",
+          "t_ms": 1.49
+        },
+        {
+          "from": "EXECUTING",
+          "to": "CHECKING",
+          "reason": "1 row(s)",
+          "t_ms": 1.59
+        },
+        {
+          "from": "CHECKING",
+          "to": "ANSWERED",
+          "reason": "sufficient evidence",
+          "t_ms": 1.6
+        }
+      ],
+      "items": [
+        {
+          "value": 0.0392
+        }
+      ]
+    },
+    {
+      "status": "ANSWERED",
+      "reason": "sufficient evidence",
+      "route_path": [
+        "directory"
+      ],
+      "args": {
+        "entity": "billing api",
+        "field": "owner_name"
+      },
+      "confidence": 1.0,
+      "notes": [],
+      "tool_calls": [
+        {
+          "tool": "directory_lookup",
+          "args_sha": "0140870feff6",
+          "attempt": 1,
+          "ok": true
+        }
+      ],
+      "transitions": [
+        {
+          "from": "RECEIVED",
+          "to": "ROUTING",
+          "reason": "received",
+          "t_ms": 1.6
+        },
+        {
+          "from": "ROUTING",
+          "to": "VALIDATING",
+          "reason": "route=directory",
+          "t_ms": 1.61
+        },
+        {
+          "from": "VALIDATING",
+          "to": "AUTHORIZING",
+          "reason": "arguments valid",
+          "t_ms": 1.62
+        },
+        {
+          "from": "AUTHORIZING",
+          "to": "EXECUTING",
+          "reason": "authorized",
+          "t_ms": 1.62
+        },
+        {
+          "from": "EXECUTING",
+          "to": "CHECKING",
+          "reason": "resolved billing-api",
+          "t_ms": 1.64
+        },
+        {
+          "from": "CHECKING",
+          "to": "ANSWERED",
+          "reason": "sufficient evidence",
+          "t_ms": 1.65
+        }
+      ],
+      "items": [
+        {
+          "entity": "billing-api",
+          "field": "owner_name",
+          "value": "Sara Malik"
+        }
+      ]
+    }
+  ]
+}

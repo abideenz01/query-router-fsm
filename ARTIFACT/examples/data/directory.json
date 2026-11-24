@@ -1,0 +1,12 @@
+{
+  "restricted_fields": ["personal_phone"],
+  "entities": [
+    {"id": "billing-api", "aliases": ["billing api", "billing service", "billing"], "owner_team": "Revenue Engineering", "owner_name": "Sara Malik", "oncall_channel": "#rev-eng-oncall", "cost_center": "CC-4100", "escalation_email": "rev-eng-escalation@example.com", "personal_phone": "+000-0000-1001"},
+    {"id": "payments-gateway", "aliases": ["payments gateway", "payment gateway", "payments"], "owner_team": "Payments Platform", "owner_name": "Omar Haddad", "oncall_channel": "#payments-oncall", "cost_center": "CC-4200", "escalation_email": "payments-escalation@example.com", "personal_phone": "+000-0000-1002"},
+    {"id": "data-lake", "aliases": ["data lake", "lakehouse", "adls"], "owner_team": "Data Platform", "owner_name": "Ayesha Raza", "oncall_channel": "#data-platform-oncall", "cost_center": "CC-5100", "escalation_email": "data-platform@example.com", "personal_phone": "+000-0000-1003"},
+    {"id": "crm", "aliases": ["crm", "salesforce instance", "customer crm"], "owner_team": "Sales Systems", "owner_name": "James Carter", "oncall_channel": "#sales-systems", "cost_center": "CC-3300", "escalation_email": "sales-systems@example.com", "personal_phone": "+000-0000-1004"},
+    {"id": "hr-portal", "aliases": ["hr portal", "people portal"], "owner_team": "People Technology", "owner_name": "Fatima Noor", "oncall_channel": "#people-tech", "cost_center": "CC-2100", "escalation_email": "people-tech@example.com", "personal_phone": "+000-0000-1005"},
+    {"id": "search-index", "aliases": ["search index", "enterprise search", "vector index"], "owner_team": "AI Platform", "owner_name": "Bilal Ahmed", "oncall_channel": "#ai-platform-oncall", "cost_center": "CC-5300", "escalation_email": "ai-platform@example.com", "personal_phone": "+000-0000-1006"},
+    {"id": "identity-provider", "aliases": ["identity provider", "sso", "idp"], "owner_team": "Security Engineering", "owner_name": "Hannah Lee", "oncall_channel": "#security-oncall", "cost_center": "CC-6100", "escalation_email": "security@example.com", "personal_phone": "+000-0000-1007"}
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "as_of_month": "2026-07",
+  "data_start_month": "2026-01",
+  "data_end_month": "2026-06",
+  "routing": {
+    "min_confidence": 0.6,
+    "min_margin": 1.5,
+    "max_subtasks": 2
+  },
+  "budgets": {
+    "max_tool_calls": 4,
+    "max_transitions": 24,
+    "max_retries": 1
+  },
+  "fallbacks": {
+    "directory": ["policy"],
+    "policy": [],
+    "metrics": []
+  },
+  "policy_search": {
+    "top_k": 3,
+    "min_score": 2.0,
+    "min_term_coverage": 0.5
+  },
+  "roles": {
+    "analyst": ["metrics", "policy", "directory"],
+    "support": ["policy", "directory"],
+    "hr": ["policy", "directory", "directory:restricted"]
+  },
+  "cost_model": {
+    "_note": "Illustrative prices and latencies. Replace with your own measurements.",
+    "usd_per_1m_input_tokens": 0.40,
+    "usd_per_1m_output_tokens": 1.60,
+    "router_input_tokens": 900,
+    "router_output_tokens": 60,
+    "router_latency_ms": 350,
+    "synthesis_base_input_tokens": 300,
+    "synthesis_output_tokens": 150,
+    "synthesis_latency_ms": 900,
+    "synthesis_latency_ms_per_1k_tokens": 120,
+    "clarify_output_tokens": 40,
+    "tools": {
+      "metrics": {"usd_per_call": 0.0004, "latency_ms": 420},
+      "policy": {"usd_per_call": 0.0001, "latency_ms": 180},
+      "directory": {"usd_per_call": 0.00002, "latency_ms": 40}
+    }
+  }
+}
